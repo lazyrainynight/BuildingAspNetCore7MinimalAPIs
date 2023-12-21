@@ -45,22 +45,22 @@ public class DishesDbContext : DbContext
             new(Guid.Parse("ebe94d5d-2ad8-4886-b246-05a1fad83d1c"), "Garam masala"));
 
         _ = modelBuilder.Entity<Dish>().HasData(
-           new(Guid.Parse("eacc5169-b2a7-41ad-92c3-dbb1a5e7af06"), 
+           new(Guid.Parse("eacc5169-b2a7-41ad-92c3-dbb1a5e7af06"),
             "Flemish Beef stew with chicory" ),
-           new(Guid.Parse("fe462ec7-b30c-4987-8a8e-5f7dbd8e0cfa"), 
+           new(Guid.Parse("fe462ec7-b30c-4987-8a8e-5f7dbd8e0cfa"),
             "Mussels with french fries" ),
-           new(Guid.Parse("b512d7cf-b331-4b54-8dae-d1228d128e8d"), 
+           new(Guid.Parse("b512d7cf-b331-4b54-8dae-d1228d128e8d"),
            "Ragu alla bolognaise"),
-           new(Guid.Parse("fd630a57-2352-4731-b25c-db9cc7601b16"), 
+           new(Guid.Parse("fd630a57-2352-4731-b25c-db9cc7601b16"),
            "Rendang"),
-           new(Guid.Parse("98929bd4-f099-41eb-a994-f1918b724b5a"), 
+           new(Guid.Parse("98929bd4-f099-41eb-a994-f1918b724b5a"),
            "Fish Masala"));
 
         _ = modelBuilder
             .Entity<Dish>()
             .HasMany(d => d.Ingredients)
             .WithMany(i => i.Dishes)
-            .UsingEntity(e => e.HasData( 
+            .UsingEntity(e => e.HasData(
                 new { DishesId = Guid.Parse("eacc5169-b2a7-41ad-92c3-dbb1a5e7af06"), IngredientsId = Guid.Parse("d28888e9-2ba9-473a-a40f-e38cb54f9b35") },
                 new { DishesId = Guid.Parse("eacc5169-b2a7-41ad-92c3-dbb1a5e7af06"), IngredientsId = Guid.Parse("da2fd609-d754-4feb-8acd-c4f9ff13ba96") },
                 new { DishesId = Guid.Parse("eacc5169-b2a7-41ad-92c3-dbb1a5e7af06"), IngredientsId = Guid.Parse("c19099ed-94db-44ba-885b-0ad7205d5e40") },
@@ -70,7 +70,7 @@ public class DishesDbContext : DbContext
                 new { DishesId = Guid.Parse("eacc5169-b2a7-41ad-92c3-dbb1a5e7af06"), IngredientsId = Guid.Parse("b5f336e2-c226-4389-aac3-2499325a3de9") },
                 new { DishesId = Guid.Parse("eacc5169-b2a7-41ad-92c3-dbb1a5e7af06"), IngredientsId = Guid.Parse("c22bec27-a880-4f2a-b380-12dcd99c61fe") },
                 new { DishesId = Guid.Parse("eacc5169-b2a7-41ad-92c3-dbb1a5e7af06"), IngredientsId = Guid.Parse("d5cad9a4-144e-4a3d-858d-9840792fa65d") },
-                new { DishesId = Guid.Parse("fe462ec7-b30c-4987-8a8e-5f7dbd8e0cfa"), IngredientsId = Guid.Parse("aab31c70-57ce-4b6d-a66c-9c1b094e915d") }, 
+                new { DishesId = Guid.Parse("fe462ec7-b30c-4987-8a8e-5f7dbd8e0cfa"), IngredientsId = Guid.Parse("aab31c70-57ce-4b6d-a66c-9c1b094e915d") },
                 new { DishesId = Guid.Parse("fe462ec7-b30c-4987-8a8e-5f7dbd8e0cfa"), IngredientsId = Guid.Parse("fef8b722-664d-403f-ae3c-05f8ed7d7a1f") },
                 new { DishesId = Guid.Parse("fe462ec7-b30c-4987-8a8e-5f7dbd8e0cfa"), IngredientsId = Guid.Parse("8d5a1b40-6677-4545-b6e8-5ba93efda0a1") },
                 new { DishesId = Guid.Parse("fe462ec7-b30c-4987-8a8e-5f7dbd8e0cfa"), IngredientsId = Guid.Parse("c22bec27-a880-4f2a-b380-12dcd99c61fe") },
